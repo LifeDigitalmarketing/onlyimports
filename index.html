@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Only Imports</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,191 +12,188 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-    body {
-  background: url('fotodefundo.jpg') no-repeat center center;
-  background-attachment: scroll;
-  background-size: 110%; /* zoom leve */
-  background-position: center top;
-  color: white;
-  position: relative;
-  filter: brightness(0.4) blur(6px);
-  transition: background-position 0.2s ease-out;
     }
 
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 0;
-}
+    body {
+      background: url('fotodefundo.jpg') no-repeat center center;
+      background-attachment: scroll;
+      background-size: 110%;
+      background-position: center top;
+      filter: brightness(0.4) blur(9px);
+      color: white;
+      position: relative;
+      transition: background-position 0.2s ease-out;
+    }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease-out forwards;
-}
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.fade-in.delay {
-  animation-delay: 0.3s;
-}
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #b784f0;
+      text-shadow: 0 0 10px rgba(183, 132, 240, 0.6);
+    }
 
-.container {
-  position: relative;
-  z-index: 1;
-  padding: 3rem 1rem;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
+    .highlight {
+      color: #b784f0;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(183, 132, 240, 0.8);
+    }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #b784f0;
-  text-shadow: 0 0 10px rgba(183, 132, 240, 0.6);
-}
+    p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
 
-.highlight {
-  color: #b784f0;
-  font-weight: bold;
-  text-shadow: 0 0 8px rgba(183, 132, 240, 0.7);
-}
+    .button-main {
+      background: linear-gradient(90deg, #9f55d9, #6c22af);
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.button-main {
-  background: linear-gradient(90deg, #9f55d9, #6c22af);
-  border: none;
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .button-main:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #b784f0;
+    }
 
-.button-main:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #b784f0;
-}
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 3rem auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin: 3rem auto;
-  overflow: hidden;
-  border-radius: 12px;
-}
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: none;
+      animation: fadeIn 0.8s ease forwards;
+      border: none;
+    }
 
-.carousel img {
-  width: 100%;
-  height: auto;
-  display: none;
-  animation: fadeInImage 0.8s ease forwards;
-}
+    .carousel img.active {
+      display: block;
+    }
 
-.carousel img.active {
-  display: block;
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-@keyframes fadeInImage {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    .carousel-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
 
-.carousel-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
+    .carousel-buttons button {
+      background-color: #6c22af;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-.carousel-buttons button {
-  background-color: #6c22af;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    .carousel-buttons button:hover {
+      background-color: #b784f0;
+    }
 
-.carousel-buttons button:hover {
-  background-color: #b784f0;
-}
+    .price {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
 
-.price {
-  font-size: 2rem;
-  margin-top: 1rem;
-}
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 1.2rem;
+    }
 
-.old-price {
-  text-decoration: line-through;
-  color: gray;
-  font-size: 1.2rem;
-}
-
-.no-interest {
-  margin-top: 1rem;
-  color: #aaa;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
+    .no-interest {
+      margin-top: 1rem;
+      color: #aaa;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <div class="container fade-in">
+  <div class="container">
     <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">
-    <h1>Descubra a <span class="highlight">Lista Secreta</span> dos fornecedores mais lucrativos da internet</h1>
-    <p style="margin-top: 1rem; font-size: 1.1rem;" class="fade-in delay">Se você quer vender como os grandes, precisa comprar como eles. Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado, direto da fonte e por um preço que ninguém acredita.</p><div class="carousel fade-in delay">
-  <img src="produto11.png" class="active" alt="Produto 1">
-  <img src="produto2.png" alt="Produto 2">
-  <img src="produto3.png" alt="Produto 3">
-  <img src="produtos4.png" alt="Produto 4">
-  <img src="produto5.png" alt="Produto 5">
-  <img src="produto6.png" alt="Produto 6">
-  <img src="produto7.png" alt="Produto 7">
-  <img src="produto8.png" alt="Produto 8">
-  <img src="produto9.png" alt="Produto 9">
-  <img src="produto10.png" alt="Produto 10">
-  <img src="produto1.png" alt="Produto 11">
-  <img src="produto12.png" alt="Produto produto12">
-</div>
+    
+    <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo escondem de você</h1>
+    
+    <p>Você está prestes a acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – os mesmos que abastecem as grandes lojas. Corte os intermediários, economize mais e transforme sua renda!</p>
+    
+    <div class="carousel">
+      <img src="produto11.png" class="active" alt="Produto 1">
+      <img src="produto2.png" alt="Produto 2">
+      <img src="produto3.png" alt="Produto 3">
+      <img src="produto4.png" alt="Produto 4">
+      <img src="produto5.png" alt="Produto 5">
+      <img src="produto6.png" alt="Produto 6">
+      <img src="produto7.png" alt="Produto 7">
+      <img src="produto8.png" alt="Produto 8">
+      <img src="produto9.png" alt="Produto 9">
+      <img src="produto10.png" alt="Produto 10">
+      <img src="produto1.png" alt="Produto 11">
+      <img src="produto12.png" alt="Produto 12">
+    </div>
 
-<div class="carousel-buttons">
-  <button onclick="prevImage()">Anterior</button>
-  <button onclick="nextImage()">Próximo</button>
-</div>
+    <div class="carousel-buttons">
+      <button onclick="prevImage()">Anterior</button>
+      <button onclick="nextImage()">Próximo</button>
+    </div>
 
-<div class="price">
-  <span class="old-price">De R$ 89,90</span> <br>
-  <strong>Por apenas <span class="highlight">R$ 19,90</span> (80% OFF)</strong>
-</div>
+    <div class="price">
+      <span class="old-price">De R$ 89,90</span> <br>
+      <strong>Por apenas <span class="highlight">R$ 19,90</span> (80% OFF)</strong>
+    </div>
 
-<button class="button-main">Quero minha Lista Secreta Agora!</button>
-<div class="no-interest">Não tenho interesse</div>
+    <button class="button-main">Quero minha Lista Secreta Agora!</button>
+    <div class="no-interest">Não tenho interesse</div>
+  </div>
 
-  </div>  <script>
+  <script>
+    // Carrossel funcional
     let currentIndex = 0;
     const images = document.querySelectorAll('.carousel img');
 
@@ -217,11 +215,12 @@ h1 {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       showImage(currentIndex);
     }
-    <script>
-  window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    document.body.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
-  });
-</script>
-  </script></body>
+
+    // Efeito Parallax do background
+    window.addEventListener('scroll', function () {
+      const scrollY = window.scrollY;
+      document.body.style.backgroundPositionY = `${scrollY * 0.3}px`;
+    });
+  </script>
+</body>
 </html>
