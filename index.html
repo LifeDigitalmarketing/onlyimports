@@ -1,180 +1,199 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Only Imports - Fornecedores Exclusivos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Only Imports - Acesso a Fornecedores Exclusivos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --roxo: #a259ff;
-      --preto: #000000;
-      --branco: #ffffff;
-      --cinza: #f5f5f5;
-    }body {
+      --roxo-elegante: #a259ff;
+      --branco: #fff;
+      --preto: #000;
+      --cinza-claro: #f2f2f2;
+    }* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
   background-color: var(--preto);
   color: var(--branco);
-  overflow-x: hidden;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 header {
   text-align: center;
   padding: 2rem 1rem;
-  background: var(--preto);
-  animation: fadeIn 1.5s ease-in-out;
 }
 
-header img {
-  width: 150px; /* Imagem da logo ajustável */
+.logo {
+  max-width: 200px;
   height: auto;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--roxo);
-}
-
-.main-section {
-  padding: 2rem;
+.hero {
   text-align: center;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease-in;
 }
 
-.main-section h1 {
-  font-size: 2.5rem;
-  animation: fadeUp 1s ease-in-out;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--roxo-elegante);
+  animation: slideInDown 1s ease-out;
 }
 
-.main-section p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  animation: fadeUp 1.4s ease-in-out;
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  color: var(--cinza-claro);
 }
 
-.cta-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background-color: var(--roxo);
+.cta-btn {
+  background-color: var(--roxo-elegante);
   color: var(--branco);
-  font-weight: bold;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
   border-radius: 8px;
-  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
   animation: pulse 2s infinite;
 }
 
-.cta-button:hover {
+.cta-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px var(--roxo);
+  background-color: #7d3eff;
 }
 
-.nao-interesse {
+.benefits, .how-it-works, .testimonials, .products, .offer, footer {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.benefits h2, .how-it-works h2, .testimonials h2, .products h2, .offer h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: var(--roxo-elegante);
+  margin-bottom: 1.5rem;
+}
+
+.benefits ul, .how-it-works ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits li, .how-it-works li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.product-img, .logo-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+.offer {
+  text-align: center;
+  background-color: #111;
+  border-radius: 16px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.offer h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.price {
+  font-size: 2rem;
+  color: var(--roxo-elegante);
+  margin: 1rem 0;
+}
+
+.price del {
+  color: gray;
+  font-size: 1.2rem;
+}
+
+.no-thanks {
   display: block;
   margin-top: 1rem;
-  color: #aaa;
-  text-decoration: underline;
+  color: gray;
   font-size: 0.9rem;
-}
-
-.imagem-produtos {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.imagem-produtos img {
-  max-width: 100%; /* Imagem dos produtos ajustável */
-  height: auto;
-}
-
-.descricao {
-  margin: 3rem 2rem;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.oferta-especial {
-  background-color: #111;
-  padding: 3rem 2rem;
-  text-align: center;
-  animation: fadeUp 1.6s ease-in-out;
-}
-
-.oferta-especial h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.preco {
-  font-size: 2rem;
-  margin-top: 1rem;
-}
-
-.preco-original {
-  text-decoration: line-through;
-  color: #888;
-  margin-right: 1rem;
-}
-
-.preco-desconto {
-  color: var(--roxo);
-  font-weight: bold;
-}
-
-/* Animações Premium */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(162, 89, 255, 0.7); }
-  70% { box-shadow: 0 0 0 20px rgba(162, 89, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(162, 89, 255, 0); }
+  text-decoration: underline;
 }
 
 footer {
-  padding: 2rem;
   text-align: center;
-  background-color: #0a0a0a;
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 0.85rem;
+  color: gray;
+  padding-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); }
 }
 
   </style>
 </head>
 <body>
   <header>
-    <!-- Mencionar imagem da logo -->
-    <img src="logoimports.png" alt="Logo Only Imports">
-  </header>  <section class="main-section">
-    <h1>Acesso aos Melhores Fornecedores da China e Brasil</h1>
-    <p>Descubra onde grandes lojistas compram com até <strong>70% de desconto</strong> e aumente sua margem de lucro.</p>
-    <a class="cta-button" href="https://pay.cakto.com.br/3cpbeyo_421390">Quero Garantir Meu Acesso</a>
-    <a class="nao-interesse" href="#">Não tenho interesse</a>
-  </section>  <div class="imagem-produtos">
-    <!-- Mencionar imagem dos produtos -->
-    <img src="produtoss.jpg" alt="+ de 800 mil variedades de Produtos">
-  </div>  <div class="descricao">
-    <p>Receba uma lista com os fornecedores mais confiáveis, com produtos variados, incluindo roupas, calçados, eletrônicos e mais. Tudo testado e aprovado, pronto para impulsionar seu negócio. Tenha acesso imediato, passo a passo de como pedir e apoio completo.</p>
-    <p>Não perca tempo buscando informações espalhadas — aqui está tudo em um só lugar, com a curadoria de especialistas no mercado de importação e revenda.</p>
-  </div>  <section class="oferta-especial">
-    <h2>Oferta Especial</h2>
-    <p class="preco">
-      <span class="preco-original">R$ 89,90</span>
-      <span class="preco-desconto">R$ 19,90</span>
-    </p>
-    <a class="cta-button" href="https://pay.cakto.com.br/3cpbeyo_421390">Quero Aproveitar com Desconto</a>
-    <a class="nao-interesse" href="#">Não tenho interesse</a>
+    <!-- LOGO AJUSTÁVEL -->
+    <img src="logoimports.png" alt="Logo Only Imports" class="logo">
+  </header>  <section class="hero">
+    <h1>Acesse agora mais de 900 fornecedores exclusivos com até 70% de desconto</h1>
+    <p>Compre direto da fonte! Produtos do Brasil e da China com entrega garantida. Ganhe acesso vitalício agora mesmo!</p>
+    <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="cta-btn">Quero Garantir Meu Acesso</a>
+  </section>  <section class="benefits">
+    <h2>O que você vai receber</h2>
+    <ul>
+      <li>📦 Acesso a +900 fornecedores brasileiros e chineses</li>
+      <li>🔒 Garantia de procedência e qualidade</li>
+      <li>📲 Fornecedores com envio imediato</li>
+      <li>💸 Produtos com até 70% OFF</li>
+    </ul>
+    <!-- IMAGEM DOS PRODUTOS AJUSTÁVEL -->
+    <img src="produtoss.jpg" alt="Imagem dos Produtos" class="product-img">
+  </section>  <section class="how-it-works">
+    <h2>Como funciona?</h2>
+    <ul>
+      <li>1️⃣ Você compra o acesso</li>
+      <li>2️⃣ Recebe o link com a lista completa</li>
+      <li>3️⃣ Começa a vender com fornecedores confiáveis</li>
+    </ul>
+  </section>  <section class="offer">
+    <h2>🎯 Oferta Especial</h2>
+    <h3>De <del>R$97,00</del> por apenas:</h3>
+    <div class="price">R$19,90</div>
+    <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="cta-btn">Quero Aproveitar Agora!</a>
+    <a href="#" class="no-thanks">Não tenho interesse</a>
   </section>  <footer>
-    © 2025 Only Imports - Todos os direitos reservados
+    © 2025 Only Imports. Todos os direitos reservados.
   </footer>
 </body>
 </html>
