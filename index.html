@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Only Imports - Oficial</title>
+  <title>Fonte das Fontes - Oficial</title>
 
-  <!-- CSS embutido -->
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #000;
+      background: url('https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
       overflow-x: hidden;
     }
@@ -20,10 +20,11 @@
       margin: auto;
       text-align: center;
     }
+
     /* Header */
     .header {
       padding: 40px 0;
-      background: radial-gradient(circle, #111 20%, #000 100%);
+      backdrop-filter: brightness(0.3);
       animation: fadeInDown 1s ease;
     }
     .logo {
@@ -36,21 +37,22 @@
     .subtitle {
       color: #aaa;
     }
+
     /* Hero */
     .hero {
       padding: 60px 0;
-      background: linear-gradient(180deg, #111, #000);
+      backdrop-filter: brightness(0.3);
     }
     .hero .headline {
       font-size: 1.8rem;
       margin-bottom: 30px;
     }
     .hero .headline span {
-      color: #ffd700;
+      color: #a259ff;
     }
     .btn {
-      background-color: #ffd700;
-      color: #000;
+      background-color: #a259ff;
+      color: #fff;
       padding: 15px 30px;
       border-radius: 50px;
       text-decoration: none;
@@ -63,35 +65,66 @@
       color: #000;
       transform: scale(1.05);
     }
+
+    /* Produtos Section */
+    .produtos {
+      padding: 60px 0;
+      backdrop-filter: brightness(0.3);
+    }
+    .produtos h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #a259ff;
+    }
+    .produtos p {
+      color: #aaa;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .produtos img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(162, 89, 255, 0.4);
+      transition: transform 0.5s;
+    }
+    .produtos img:hover {
+      transform: scale(1.02);
+    }
+
     /* Benefits */
     .benefits {
       padding: 50px 0;
+      backdrop-filter: brightness(0.3);
     }
     .benefits h3 {
       margin: 20px 0;
       font-weight: 500;
     }
+
     /* Price */
     .price {
       padding: 60px 0;
-      background: #111;
+      backdrop-filter: brightness(0.3);
     }
     .price h2 {
       font-size: 2rem;
       margin-bottom: 30px;
     }
     .price span {
-      color: #ffd700;
+      color: #a259ff;
     }
     .pulse {
       animation: pulse 2s infinite;
     }
+
     /* Footer */
     .footer {
       padding: 20px;
-      background-color: #000;
+      background-color: rgba(0,0,0,0.8);
       color: #555;
     }
+
     /* Animations */
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -113,8 +146,8 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <img src="logoonlyimports.png" alt="Logo Fonte das Fontes" class="logo">
-      <h1 class="title">Fonte das Fontes Oficial</h1>
+      <img src="logoimports.png" alt="Logo Fonte das Fontes" class="logo">
+      <h1 class="title">Only Imports Oficial</h1>
       <p class="subtitle">O Maior Banco de Fontes do Brasil!</p>
     </div>
   </header>
@@ -124,6 +157,15 @@
     <div class="container">
       <h2 class="headline">Tenha acesso a mais de <span>5.000 fontes</span> prontas para usar no seu Instagram, WhatsApp e outros!</h2>
       <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="btn">Acessar por R$ 19,90</a>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="produtos">
+    <div class="container">
+      <h2>Produtos</h2>
+      <p>Calçados - Roupas - Acessórios</p>
+      <img src="https://via.placeholder.com/600x400.png?text=Imagem+dos+Produtos" alt="Imagem dos Produtos">
     </div>
   </section>
 
@@ -150,11 +192,11 @@
     <p>© 2025 Only Imports Oficial - Todos os direitos reservados</p>
   </footer>
 
-  <!-- JavaScript e Scroll Reveal embutidos -->
+  <!-- Scroll Reveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-    ScrollReveal().reveal('.headline, .btn, .benefits h3, .price h2', {
-      delay: 300,
+    ScrollReveal().reveal('.headline, .btn, .produtos h2, .produtos p, .produtos img, .benefits h3, .price h2', {
+      delay: 200,
       distance: '50px',
       duration: 1000,
       easing: 'ease',
