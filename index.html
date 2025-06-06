@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="pt-br"><head>
-  <meta charset="UTF-8">
+<!DOCTYPE html><html lang="pt-br"><head>  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Only Imports</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
@@ -11,15 +10,14 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-    }body {
-  background: url('fotodefundo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  backdrop-filter: blur(8px) brightness(0.4);
-  color: white;
-  position: relative;
-}
-
-body::after {
+    }
+    body {
+      background: url('fotodefundo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(7px) brightness(0.5);
+      color: white;
+      position: relative;
+    }body::after {
   content: "";
   position: fixed;
   top: 0;
@@ -51,7 +49,7 @@ h1 {
 .highlight {
   color: #b784f0;
   font-weight: bold;
-  text-shadow: 0 0 8px rgba(183, 132, 240, 0.8);
+  text-shadow: 0 0 8px rgba(183, 132, 240, 0.7);
 }
 
 .button-main {
@@ -85,15 +83,22 @@ h1 {
   width: 100%;
   height: auto;
   display: none;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .carousel img.active {
   display: block;
-  opacity: 1;
-  transform: scale(1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .carousel-buttons {
@@ -134,24 +139,25 @@ h1 {
   cursor: pointer;
 }
 
-.guarantee {
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  color: #ddd;
-}
-
   </style>
-</head><body>
+</head>
+<body>
   <div class="container" data-aos="fade-down">
     <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">
-    <h1>Você está a um clique de acessar os <span class="highlight">Fornecedores Secretos</span> que fazem os maiores lucros do mercado</h1>
-    <p style="margin-top: 1rem; font-size: 1.1rem;">A lista que transformou milhares de iniciantes em vendedores lucrativos. Exclusiva, validada e 100% segura. Só hoje, por <span class="highlight">R$ 19,90</span>.</p><div class="carousel">
-  <img src="produto1.png" class="active" alt="Produto 1">
+    <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo escondem de você</h1>
+    <p style="margin-top: 1rem; font-size: 1.1rem;">Você está a um clique de acessar os <span class="highlight">6 maiores fornecedores</span> do Brasil com preços exclusivos – direto da fonte e com 80% de desconto.</p><div class="carousel">
+  <img src="produto11.png" class="active" alt="Produto 1">
   <img src="produto2.png" alt="Produto 2">
   <img src="produto3.png" alt="Produto 3">
-  <img src="produto4.png" alt="Produto 4">
+  <img src="produtos4.png" alt="Produto 4">
   <img src="produto5.png" alt="Produto 5">
-  <img src="produto6.png" alt=  >
+  <img src="produto6.png" alt="Produto 6">
+  <img src="produto7.png" alt="Produto 7">
+  <img src="produto8.png" alt="Produto 8">
+  <img src="produto9.png" alt="Produto 9">
+  <img src="produto10.png" alt="Produto 10">
+  <img src="produto1.png" alt="Produto 11">
+  <img src="produto12.png" alt="Produto 12">
 </div>
 
 <div class="carousel-buttons">
@@ -164,21 +170,11 @@ h1 {
   <strong>Por apenas <span class="highlight">R$ 19,90</span> (80% OFF)</strong>
 </div>
 
-<button class="button-main">🔓 Quero acesso imediato à Lista Secreta</button>
+<button class="button-main">Quero minha Lista Secreta Agora!</button>
 <div class="no-interest">Não tenho interesse</div>
 
-<div class="guarantee">🔒 Compra segura | ✅ Acesso imediato | 🕒 Promoção por tempo limitado</div>
-
   </div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false,
-      offset: 100,
-      throttleDelay: 99,
-      debounceDelay: 50
-    });
+    AOS.init();
 
     let currentIndex = 0;
     const images = document.querySelectorAll('.carousel img');
@@ -201,4 +197,5 @@ h1 {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       showImage(currentIndex);
     }
-  </script></body></html>
+  </script></body>
+</html>
