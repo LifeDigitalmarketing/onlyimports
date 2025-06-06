@@ -223,12 +223,18 @@
 
     // Efeito parallax leve no fundo
     window.addEventListener('scroll', () => {
-      const offset = window.scrollY * 0.05;
-      document.body.style.setProperty('--scrollY', offset + 'px');
-      document.body.style.setProperty('--bg-transform', `translateY(${offset}px)`);
-      document.body.style.setProperty('--bg-scale', `scale(${1 + offset / 1000})`);
-      document.querySelector("body::before")?.style?.setProperty("transform", `scale(${1 + offset / 1000}) translateY(${offset}px)`);
-    });
+  const scroll = window.scrollY;
+  const bg = document.querySelector('body::before'); // won't work – use workaround:
+  const styleEl = document.createElement('style');
+  styleEl.innerHTML = `
+    body::before {
+      transform: scale(1.2) translateY(${scroll * 0.2}px) !important;
+    }
+  `;
+  document.head.querySelector('#parallax-style')?.remove();
+  styleEl.id = 'parallax-style';
+  document.head.appendChild(styleEl);
+});
   </script>
 </body>
 </html>
