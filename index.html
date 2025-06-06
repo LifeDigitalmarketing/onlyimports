@@ -2,79 +2,75 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Only Imports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Imports - Oficial</title>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
+      font-family: 'Poppins', sans-serif;
       background-color: #000;
-      color: white;
+      color: #fff;
+      overflow-x: hidden;
     }
-
     .container {
+      width: 90%;
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 20px;
+      margin: auto;
       text-align: center;
     }
 
+    /* Header */
+    .header {
+      padding: 40px 0;
+      animation: fadeInDown 1s ease;
+    }
     .logo {
-      width: 150px;
-      max-width: 90%;
-      margin: 20px auto;
-      animation: pulse 2.5s infinite;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      color: #A259FF;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #ccc;
+      width: 120px;
       margin-bottom: 20px;
     }
 
-    .cta-button {
-      display: inline-block;
-      background-color: #A259FF;
-      color: white;
-      padding: 14px 32px;
+    /* Hero */
+    .hero {
+      padding: 60px 0;
+    }
+    .hero .headline {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+    .hero .headline span {
+      color: #a259ff;
+    }
+    .btn {
+      background-color: #a259ff;
+      color: #fff;
+      padding: 15px 30px;
       border-radius: 50px;
       text-decoration: none;
-      font-size: 1.1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 15px rgba(162, 89, 255, 0.5);
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
     }
-
-    .cta-button:hover {
+    .btn:hover {
+      background-color: #fff;
+      color: #000;
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(162, 89, 255, 0.8);
     }
 
+    /* Produtos Section */
     .produtos {
-      margin-top: 60px;
+      padding: 60px 0;
     }
-
     .produtos h2 {
-      font-size: 1.8rem;
-      color: #A259FF;
+      font-size: 2rem;
       margin-bottom: 10px;
+      color: #a259ff;
     }
-
     .produtos p {
+      color: #aaa;
+      margin-bottom: 30px;
       font-size: 1.1rem;
-      margin-bottom: 20px;
     }
-
     .produtos img {
       width: 100%;
       max-width: 600px;
@@ -82,56 +78,113 @@
       box-shadow: 0 0 20px rgba(162, 89, 255, 0.4);
       transition: transform 0.5s;
     }
-
     .produtos img:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
-    footer {
-      margin-top: 60px;
+    /* Benefits */
+    .benefits {
+      padding: 50px 0;
+    }
+    .benefits h3 {
+      margin: 20px 0;
+      font-weight: 500;
+    }
+
+    /* Price */
+    .price {
+      padding: 60px 0;
+    }
+    .price h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .price span {
+      color: #a259ff;
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Footer */
+    .footer {
       padding: 20px;
-      background-color: #111;
-      color: #666;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
+      background-color: rgba(0,0,0,0.8);
+      color: #555;
     }
 
-    /* Animação Pulse */
+    /* Animations */
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 10px rgba(162, 89, 255, 0.4);
-      }
-      50% {
-        box-shadow: 0 0 25px rgba(162, 89, 255, 0.9);
-      }
-      100% {
-        box-shadow: 0 0 10px rgba(162, 89, 255, 0.4);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
+
 <body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <img src="logoimports.png" alt="Logo Only Imports" class="logo">
+    </div>
+  </header>
 
-  <div class="container">
-    <img src="logoimports.png" alt="Only Imports Logo" class="logo">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="headline">Tenha acesso aos melhores <span>produtos importados</span> com preço acessível!</h2>
+      <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="btn">Comprar por R$ 19,90</a>
+    </div>
+  </section>
 
-    <h1>Fontes Premium para Criadores</h1>
-    <p>Desbloqueie milhares de fontes exclusivas e premium para elevar seus projetos a outro nível.</p>
-
-    <a class="cta-button" href="https://pay.cakto.com.br/3cpbeyo_421390" target="_blank">
-      Adquirir Agora por R$19,90
-    </a>
-
-    <div class="produtos">
+  <!-- Produtos -->
+  <section class="produtos">
+    <div class="container">
       <h2>Produtos</h2>
       <p>Calçados - Roupas - Acessórios</p>
-      <img src="produtoss.jpg" alt="Produtos Only Imports">
+      <img src="produtoss.jpg" alt="Imagem dos Produtos">
     </div>
-  </div>
+  </section>
 
-  <footer>
-    © 2025 Only Imports. Todos os direitos reservados.
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <h3>✔️ Produtos 100% originais</h3>
+      <h3>✔️ Entrega rápida e garantida</h3>
+      <h3>✔️ Pagamento seguro</h3>
+      <h3>✔️ Melhores preços do mercado</h3>
+    </div>
+  </section>
+
+  <!-- Price -->
+  <section class="price">
+    <div class="container">
+      <h2>Por apenas <span>R$ 19,90</span> na sua primeira compra!</h2>
+      <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="btn pulse">Quero garantir agora!</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Only Imports - Todos os direitos reservados</p>
   </footer>
 
+  <!-- Scroll Reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.headline, .btn, .produtos h2, .produtos p, .produtos img, .benefits h3, .price h2', {
+      delay: 200,
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease',
+      origin: 'bottom',
+      interval: 200,
+    });
+  </script>
 </body>
 </html>
