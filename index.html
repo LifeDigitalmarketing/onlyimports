@@ -1,167 +1,182 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Only Imports - A Fonte dos Gigantes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Only Imports - A Fonte dos Grandes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+    :root {
+      --roxo-principal: #b57df0;
+      --preto: #000;
+      --branco: #fff;
     }body {
-  background-color: #000;
-  color: white;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--branco);
+  background: url('fotodefundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: brightness(0.9) contrast(1.1);
+  filter: contrast(1.2) saturate(1.2);
 }
 
-header {
+header, section, footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 2rem;
 }
 
-header img {
-  max-width: 300px; /* AJUSTÁVEL */
+.logo {
+  max-width: 300px;
   height: auto;
-}
-
-.container {
-  padding: 20px;
-  text-align: center;
+  margin: 1rem auto;
 }
 
 h1, h2, h3 {
-  margin-bottom: 20px;
-  font-weight: 800;
+  font-family: 'Anton', sans-serif;
+  color: var(--roxo-principal);
+  text-shadow: 0 0 10px rgba(181, 125, 240, 0.7);
 }
 
-.headline {
-  font-size: 2em;
-  color: #b57df0;
-}
-
-.subheadline {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-}
-
-.cta-btn {
-  background-color: #b57df0;
-  color: white;
-  padding: 15px 30px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin: 20px auto;
+.cta-button, .skip-button {
   display: inline-block;
-}
-
-.cta-btn:hover {
-  background-color: #9e60db;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.products img {
-  width: 100%;
-  border-radius: 8px;
-  background: #1a1a1a;
-}
-
-.benefits {
-  text-align: left;
-  max-width: 800px;
-  margin: 40px auto;
-}
-
-.benefits li {
-  margin-bottom: 15px;
-}
-
-.price-section {
-  font-size: 1.5em;
-  margin-top: 40px;
-}
-
-.price-old {
-  text-decoration: line-through;
-  color: #888;
-}
-
-.price-new {
-  font-size: 2.5em;
-  color: #b57df0;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.no-interest {
-  margin-top: 15px;
-  color: #bbb;
-  font-size: 0.9em;
+.cta-button {
+  background: linear-gradient(90deg, #7e45e8, #b57df0);
+  color: var(--branco);
+  box-shadow: 0 0 15px #b57df0;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #b57df0;
+}
+
+.skip-button {
+  background: transparent;
+  color: #aaa;
   text-decoration: underline;
+}
+
+.carousel {
+  position: relative;
+  max-width: 350px;
+  margin: 2rem auto;
+  border: 2px solid var(--roxo-principal);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(181, 125, 240, 0.3);
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: none;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease;
+}
+
+.carousel img.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.carousel-controls button {
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  background-color: var(--roxo-principal);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-footer {
-  padding: 40px 20px;
-  font-size: 0.9em;
-  color: #888;
-  text-align: center;
+.vintage-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url('https://www.transparenttextures.com/patterns/noise.png');
+  opacity: 0.15;
+  z-index: 9999;
 }
 
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <!-- LOGO - Substituir src pelo link da imagem -->
-    <img src="logoimports.png" alt="Only Imports Logo">
-  </header>  <div class="container">
-    <h1 class="headline" data-aos="fade-up">CHEGA DE PAGAR CARO!</h1>
-    <p class="subheadline" data-aos="fade-up" data-aos-delay="100">
-      Lista Revelada: Os 6 maiores fabricantes que abastecem as grandes lojas agora estão ao seu alcance.
-    </p><button class="cta-btn" data-aos="zoom-in">QUERO ACESSAR AGORA</button>
-
-<h2 data-aos="fade-up">PRODUTOS</h2>
-<p data-aos="fade-up" data-aos-delay="100">CALÇADOS - ROUPAS - ACESSÓRIOS</p>
-
-<div class="products" data-aos="fade-up" data-aos-delay="200">
-  <!-- Substituir src pelos links reais das imagens dos produtos -->
-  <img src="produtoss.jpg" alt="Produto 1">
-</div>
-
-<div class="benefits" data-aos="fade-up">
-  <ul>
-    <li>✅ Peça direto da China de forma simples e segura</li>
-    <li>✅ Economize com preços de fábrica sem atravessadores</li>
-    <li>✅ Lucre até 300% revendendo os mesmos produtos</li>
-    <li>✅ A fonte dos gigantes do varejo, agora na sua mão</li>
-  </ul>
-</div>
-
-<div class="price-section" data-aos="fade-up">
-  <p class="price-old">De R$ 99,90</p>
-  <p class="price-new">Por apenas R$ 19,90</p>
-  <p><strong>80% DE DESCONTO</strong></p>
-</div>
-
-<button class="cta-btn" data-aos="zoom-in">GARANTIR MEU ACESSO AGORA</button>
-<p class="no-interest">Não tenho interesse</p>
-
-  </div>  <footer>
-    © 2025 Only Imports. Todos os direitos reservados.
+  <div class="vintage-overlay"></div>
+  <header>
+    <img src="logoimports.png" alt="Logo Only Imports" class="logo" />
+    <h1 data-aos="zoom-in">CHEGA DE PAGAR CARO!</h1>
+    <p data-aos="fade-up">Descubra os fornecedores secretos das lojas mais famosas. E agora, o acesso é seu.</p>
+  </header>  <section data-aos="fade-up">
+    <h2>Produtos Exclusivos</h2>
+    <div class="carousel">
+      <img src="produto1.png" class="active" alt="Produto 1" />
+      <img src="produto2.png" alt="Produto 2" />
+      <img src="produto3.png" alt="Produto 3" />
+      <img src="produto4.png" alt="Produto 4" />
+      <img src="produto5.png" alt="Produto 5" />
+      <img src="produto6.png" alt="Produto 6" />
+      <img src="produto7.png" alt="Produto 7" />
+      <img src="produto8.png" alt="Produto 8" />
+      <img src="produto9.png" alt="Produto 9" />
+      <img src="produto10.png" alt="Produto 10" />
+      <img src="produto11.png" alt="Produto 11" />
+      <img src="produto12.png" alt="Produto produto12" />
+    </div>
+    <div class="carousel-controls">
+      <button onclick="previousImage()">◀</button>
+      <button onclick="nextImage()">▶</button>
+    </div>
+  </section>  <section data-aos="fade-up">
+    <h2>🔥 Oportunidade Limitada</h2>
+    <p>Tenha acesso à lista dos 6 maiores fornecedores chineses e brasileiros usados pelas grandes lojas.</p>
+    <h3>DE <s>R$ 99,90</s> POR APENAS <span style="color: var(--roxo-principal); text-shadow: 0 0 10px #b57df0;">R$ 19,90</span></h3>
+    <p><strong>80% DE DESCONTO</strong> só hoje!</p>
+    <button class="cta-button">QUERO TER ACESSO AGORA 🔥</button>
+    <div><button class="skip-button">Não tenho interesse</button></div>
+  </section>  <footer data-aos="fade-up">
+    <p>© 2025 Only Imports. Todos os direitos reservados.</p>
   </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init();
+
+    const images = document.querySelectorAll('.carousel img');
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function previousImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
   </script></body>
 </html>
