@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Only Imports</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,195 +12,263 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-    }
+    }body {
+  color: white;
+  overflow-x: hidden;
+  background: black;
+  position: relative;
+}
 
-    body {
-      color: white;
-      overflow-x: hidden;
-      background: black;
-      position: relative;
-    }
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 300%;
+  background: url('fotodefundo.jpg') no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.3) blur(9px);
+  z-index: -2;
+  transform: scale(1);
+  will-change: transform;
+}
 
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 110%;
-      height: 500%;
-      background: url('fotodefundo.jpg') no-repeat center center;
-      background-size: cover;
-      filter: brightness(0.3) blur(8px);
-      z-index: -2;
-      transform: scale(1);
-      will-change: transform;
-    }
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
 
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 150%;
-      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-      opacity: 0.2;
-      pointer-events: none;
-      z-index: -1;
-    }
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
 
-    .container {
-      position: relative;
-      z-index: 1;
-      padding: 3rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
+.logo {
+  width: 450px;
+  max-width: 90vw;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #b784f0;
-      text-shadow: 0 0 10px rgba(183, 132, 240, 0.6);
-    }
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #b784f0;
+  text-shadow: 0 0 10px rgba(183, 132, 240, 0.6);
+}
 
-    .highlight {
-      color: #b784f0;
-      font-weight: bold;
-      text-shadow: 0 0 8px rgba(183, 132, 240, 0.7);
-    }
+.highlight {
+  color: #b784f0;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(183, 132, 240, 0.7);
+}
 
-    .button-main {
-      background: linear-gradient(90deg, #9f55d9, #6c22af);
-      border: none;
-      color: white;
-      font-weight: bold;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border-radius: 10px;
-      margin-top: 2rem;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.section-title {
+  margin-top: 4rem;
+  font-size: 2rem;
+  color: #b784f0;
+  font-weight: 900;
+}
 
-    .button-main:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #b784f0;
-    }
+.section-subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #ccc;
+}
 
-    .carousel {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      margin: 3rem auto;
-      overflow: hidden;
-      border-radius: 12px;
-      min-height: 400px;
-    }
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-    .carousel img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      transform: scale(0.98);
-    }
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: none;
+  animation: fadeIn 0.8s ease forwards;
+}
 
-    .carousel img.active {
-      position: relative;
-      opacity: 1;
-      transform: scale(1);
-      z-index: 1;
-    }
+.carousel img.active {
+  display: block;
+}
 
-    .carousel-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-    .carousel-buttons button {
-      background-color: #6c22af;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.carousel-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
 
-    .carousel-buttons button:hover {
-      background-color: #b784f0;
-    }
+.carousel-buttons button {
+  background-color: #6c22af;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .price {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
+.carousel-buttons button:hover {
+  background-color: #b784f0;
+}
 
-    .old-price {
-      text-decoration: line-through;
-      color: gray;
-      font-size: 1.2rem;
-    }
+.products-description,
+.extra-text,
+.benefits,
+.discount-section {
+  margin-top: 2rem;
+}
 
-    .no-interest {
-      margin-top: 1rem;
-      color: #aaa;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+.benefits p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
 
-    .logo {
-      width: 450px;
-      margin-bottom: 0.5rem; /* reduzido de 2rem para 1rem */
-    }
+.benefits .icon {
+  color: #b784f0;
+  margin-right: 0.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.discount-title {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.discount-title .top {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.price {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 1.2rem;
+}
+
+.button-main {
+  background: linear-gradient(90deg, #9f55d9, #6c22af);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-main:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #b784f0;
+}
+
+.no-interest {
+  margin-top: 1rem;
+  color: #aaa;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
   <div class="background"></div>
-
   <div class="container" data-aos="fade-down">
-    <img src="logoimports.png" alt="Only Imports Logo" class="logo"> 
+    <img src="logoimports.png" alt="Only Imports Logo" class="logo">
     <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo não querem que você conheça</h1>
-    <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p>
+    <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p><div class="section-title">PRODUTOS</div>
+<div class="section-subtitle">Calçados - Roupas - Acessórios</div>
 
-    <div class="carousel">
-      <img src="produto11.png" class="active" alt="Produto 1">
-      <img src="produto2.png" alt="Produto 2">
-      <img src="produto3.png" alt="Produto 3">
-      <img src="produto4.png" alt="Produto 4">
-      <img src="produto5.png" alt="Produto 5">
-      <img src="produto6.png" alt="Produto 6">
-      <img src="produto7.png" alt="Produto 7">
-      <img src="produto8.png" alt="Produto 8">
-      <img src="produto9.png" alt="Produto 9">
-      <img src="produto10.png" alt="Produto 10">
-      <img src="produto1.png" alt="Produto 11">
-      <img src="produto12.png" alt="Produto 12">
-    </div>
+<div class="carousel">
+  <img src="produto11.png" class="active" alt="Produto 1">
+  <img src="produto2.png" alt="Produto 2">
+  <img src="produto3.png" alt="Produto 3">
+  <img src="produto4.png" alt="Produto 4">
+  <img src="produto5.png" alt="Produto 5">
+  <img src="produto6.png" alt="Produto 6">
+  <img src="produto7.png" alt="Produto 7">
+  <img src="produto8.png" alt="Produto 8">
+  <img src="produto9.png" alt="Produto 9">
+  <img src="produto10.png" alt="Produto 10">
+  <img src="produto1.png" alt="Produto 11">
+  <img src="produto12.png" alt="Produto 12">
+</div>
 
-    <div class="carousel-buttons">
-      <button onclick="prevImage()">Anterior</button>
-      <button onclick="nextImage()">Próximo</button>
-    </div>
+<div class="carousel-buttons">
+  <button onclick="prevImage()">Anterior</button>
+  <button onclick="nextImage()">Próximo</button>
+</div>
 
-    <div class="price">
-      <span class="old-price">De R$ 89,90</span> <br>
-      <strong>Por apenas <span class="highlight">R$ 19,90</span> (80% OFF)</strong>
-    </div>
+<div class="products-description">
+  <p style="font-size: 1.1rem;">São mais de 800 mil variedades de produtos.</p>
+  <p>FORNECEDORES CHINESES E BRIGADEIROS</p>
+</div>
 
-    <a href="https://pay.cakto.com.br/3cpbeyo_421390">
-      <button class="button-main">Quero minha Lista Secreta Agora!</button>
-    </a>
-    <div class="no-interest">Não tenho interesse</div>
+<div class="benefits">
+  <p><span class="icon">✔️</span> Peça produtos da china de forma simples e prática</p>
+  <p><span class="icon">✔️</span> Economize comprando diretamente das fábricas chinesas</p>
+  <p><span class="icon">✔️</span> Lucre mais de 300% com a revenda desses produtos</p>
+  <p><span class="icon">✔️</span> A fonte das lojas mais famosas</p>
+</div>
+
+<div class="discount-section">
+  <div class="discount-title">
+    <span class="top">80% de</span>
+    <strong class="highlight">DESCONTO</strong>
   </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+  <div class="price">
+    <span class="old-price">De R$ 89,90</span><br>
+    <strong>Por apenas <span class="highlight">R$ 19,90</span></strong>
+  </div>
+
+  <a href="https://pay.cakto.com.br/3cpbeyo_421390">
+    <button class="button-main">Quero minha Lista Secreta Agora!</button>
+  </a>
+  <div class="no-interest">Não tenho interesse</div>
+</div>
+
+  </div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     AOS.init();
 
     let currentIndex = 0;
@@ -226,7 +293,6 @@
       showImage(currentIndex);
     }
 
-    // Efeito de zoom ao rolar
     const bg = document.querySelector('.background');
     let latestScrollY = 0;
     let ticking = false;
@@ -244,6 +310,5 @@
         ticking = true;
       }
     });
-  </script>
-</body>
+  </script></body>
 </html>
