@@ -163,7 +163,7 @@
   <div class="background"></div>
 
   <div class="container" data-aos="fade-down">
-    <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">
+    <img src="logoimports.png" alt="Only Imports Logo" style="width: 350px; margin-bottom: 1rem;">
     <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo não querem que você conheça</h1>
     <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p>
 
@@ -171,7 +171,7 @@
       <img src="produto11.png" class="active" alt="Produto 1">
       <img src="produto2.png" alt="Produto 2">
       <img src="produto3.png" alt="Produto 3">
-      <img src="produtos4.png" alt="Produto 4">
+      <img src="produto4.png" alt="Produto 4">
       <img src="produto5.png" alt="Produto 5">
       <img src="produto6.png" alt="Produto 6">
       <img src="produto7.png" alt="Produto 7">
@@ -229,7 +229,7 @@
     let ticking = false;
 
     function updateZoom() {
-      const scale = 1 + latestScrollY * 0.0005;
+      const scale = Math.min(1 + latestScrollY * 0.0002, 1.05);
       bg.style.transform = `scale(${scale})`;
       ticking = false;
     }
