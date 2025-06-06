@@ -25,17 +25,16 @@
     body::before {
       content: "";
       position: fixed;
-      top: -5%;
-      left: -5%;
+      top: 0;
+      left: 0;
       width: 110%;
       height: 110%;
       background: url('fotodefundo.jpg') no-repeat center center;
-      background-size: 120%;
-      filter: brightness(0.3) blur(10px);
-      transform: scale(1.1);
+      background-size: cover;
+      filter: brightness(0.3) blur(8px);
+      transform: scale(1.2) translateY(0);
       z-index: -2;
       will-change: transform;
-      transition: transform 0.2s ease-out;
     }
 
     body::after {
