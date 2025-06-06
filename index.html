@@ -1,23 +1,26 @@
-<!DOCTYPE html><html lang="pt-br"><head>  <meta charset="UTF-8">
+<!DOCTYPE html><html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Only Imports</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-    }
-    body {
-      background: url('fotodefundo.jpg') no-repeat center center fixed;
-      background-size: cover;
-      backdrop-filter: blur(7px) brightness(0.5);
-      color: white;
-      position: relative;
-    }body::after {
+    }body {
+  background: url('fotodefundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(7px) brightness(0.5);
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::after {
   content: "";
   position: fixed;
   top: 0;
@@ -28,6 +31,23 @@
   opacity: 0.25;
   pointer-events: none;
   z-index: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container {
@@ -83,14 +103,14 @@ h1 {
   width: 100%;
   height: auto;
   display: none;
-  animation: fadeIn 0.8s ease forwards;
+  animation: fadeInImage 0.8s ease forwards;
 }
 
 .carousel img.active {
   display: block;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInImage {
   from {
     opacity: 0;
     transform: scale(0.95);
@@ -142,10 +162,10 @@ h1 {
   </style>
 </head>
 <body>
-  <div class="container" data-aos="fade-down">
+  <div class="container fade-in">
     <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">
-    <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo escondem de você</h1>
-    <p style="margin-top: 1rem; font-size: 1.1rem;">Você está a um clique de acessar os <span class="highlight">6 maiores fornecedores</span> do Brasil com preços exclusivos – direto da fonte e com 80% de desconto.</p><div class="carousel">
+    <h1>Descubra a <span class="highlight">Lista Secreta</span> dos fornecedores mais lucrativos da internet</h1>
+    <p style="margin-top: 1rem; font-size: 1.1rem;" class="fade-in delay">Se você quer vender como os grandes, precisa comprar como eles. Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado, direto da fonte e por um preço que ninguém acredita.</p><div class="carousel fade-in delay">
   <img src="produto11.png" class="active" alt="Produto 1">
   <img src="produto2.png" alt="Produto 2">
   <img src="produto3.png" alt="Produto 3">
@@ -157,7 +177,7 @@ h1 {
   <img src="produto9.png" alt="Produto 9">
   <img src="produto10.png" alt="Produto 10">
   <img src="produto1.png" alt="Produto 11">
-  <img src="produto12.png" alt="Produto 12">
+  <img src="produto12.png" alt="Produto produto12">
 </div>
 
 <div class="carousel-buttons">
@@ -173,9 +193,7 @@ h1 {
 <button class="button-main">Quero minha Lista Secreta Agora!</button>
 <div class="no-interest">Não tenho interesse</div>
 
-  </div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
-    AOS.init();
-
+  </div>  <script>
     let currentIndex = 0;
     const images = document.querySelectorAll('.carousel img');
 
