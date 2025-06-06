@@ -1,226 +1,180 @@
 <!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Only Imports - Fornecedores Premium</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Only Imports - Fornecedores Exclusivos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --roxo: #a259ff;
+      --preto: #000000;
+      --branco: #ffffff;
+      --cinza: #f5f5f5;
     }body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Raleway', sans-serif;
-  scroll-behavior: smooth;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--preto);
+  color: var(--branco);
   overflow-x: hidden;
 }
 
 header {
   text-align: center;
-  padding: 50px 20px 20px;
-  animation: fadeInDown 1.2s ease-in-out;
-}
-
-.logo {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-}
-
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #b84ff1;
-  margin-bottom: 20px;
-  animation: glow 3s infinite ease-in-out;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: #ccc;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.descricao {
-  padding: 30px 20px;
-  max-width: 900px;
-  margin: auto;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #bbb;
-  animation: fadeIn 1.4s ease-in-out;
-}
-
-.descricao h2 {
-  color: #b84ff1;
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.produtos {
-  padding: 60px 20px;
-  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--preto);
   animation: fadeIn 1.5s ease-in-out;
 }
 
-.produtos img {
-  max-width: 95%;
+header img {
+  width: 150px; /* Imagem da logo ajustável */
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(184, 79, 241, 0.3);
-  transition: transform 0.4s ease;
 }
 
-.produtos img:hover {
-  transform: scale(1.03);
-}
-
-.oferta {
-  padding: 60px 20px;
-  background-color: #111;
-  text-align: center;
-  animation: pulseIn 1.5s ease-in-out;
-}
-
-.oferta h2 {
-  font-size: 2.5rem;
+h1, h2 {
   font-family: 'Playfair Display', serif;
-  color: #b84ff1;
-  margin-bottom: 10px;
+  color: var(--roxo);
 }
 
-.preco-antigo {
-  font-size: 1.3rem;
-  text-decoration: line-through;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.preco-novo {
-  font-size: 3rem;
-  color: #b84ff1;
-  font-weight: 900;
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-.desconto {
-  margin-top: 10px;
-  color: #8c4cdb;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.btn-comprar {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 18px 36px;
-  background: linear-gradient(90deg, #b84ff1, #9d3cc7);
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.3rem;
-  text-decoration: none;
-  box-shadow: 0 0 15px #b84ff1aa;
-  transition: all 0.4s ease;
-  animation: floatY 2.5s infinite ease-in-out;
-}
-
-.btn-comprar:hover {
-  transform: scale(1.07);
-  background: linear-gradient(90deg, #9d3cc7, #b84ff1);
-}
-
-.no-interest {
-  display: block;
-  margin-top: 20px;
-  color: #888;
-  text-decoration: underline;
-  font-size: 1rem;
-}
-
-footer {
-  padding: 40px;
+.main-section {
+  padding: 2rem;
   text-align: center;
-  color: #666;
-  font-size: 0.95rem;
 }
 
-/* Animações premium */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+.main-section h1 {
+  font-size: 2.5rem;
+  animation: fadeUp 1s ease-in-out;
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-50px); }
-  to { opacity: 1; transform: translateY(0); }
+.main-section p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  animation: fadeUp 1.4s ease-in-out;
 }
 
+.cta-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--roxo);
+  color: var(--branco);
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--roxo);
+}
+
+.nao-interesse {
+  display: block;
+  margin-top: 1rem;
+  color: #aaa;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.imagem-produtos {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.imagem-produtos img {
+  max-width: 100%; /* Imagem dos produtos ajustável */
+  height: auto;
+}
+
+.descricao {
+  margin: 3rem 2rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.oferta-especial {
+  background-color: #111;
+  padding: 3rem 2rem;
+  text-align: center;
+  animation: fadeUp 1.6s ease-in-out;
+}
+
+.oferta-especial h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.preco {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.preco-original {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 1rem;
+}
+
+.preco-desconto {
+  color: var(--roxo);
+  font-weight: bold;
+}
+
+/* Animações Premium */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes glow {
-  0%, 100% { text-shadow: 0 0 10px #b84ff1aa, 0 0 20px #b84ff1aa; }
-  50% { text-shadow: 0 0 20px #b84ff1cc, 0 0 40px #b84ff1cc; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulseIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(162, 89, 255, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(162, 89, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(162, 89, 255, 0); }
 }
 
-@keyframes pulseGlow {
-  0%, 100% { text-shadow: 0 0 10px #b84ff1aa; }
-  50% { text-shadow: 0 0 20px #b84ff1; }
-}
-
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: #0a0a0a;
+  font-size: 0.9rem;
+  color: #888;
 }
 
   </style>
 </head>
-<body>  <header>
-    <img src="logoimports.png" alt="Logo Only Imports" class="logo">
-  </header>  <section class="hero">
-    <h1>Descubra os Melhores Fornecedores do Brasil e da China</h1>
-    <p>Receba acesso direto a contatos exclusivos para sua loja ou revenda, usados por grandes dropshippers e empreendedores digitais.</p>
-  </section>  <section class="descricao">
-    <h2>O que é o produto?</h2>
-    <p>
-      Você terá acesso a uma lista secreta com os melhores fornecedores nacionais e internacionais. Esses fornecedores trabalham com produtos virais, de qualidade e com margens de lucro altíssimas.
-    </p>
-    <p>
-      Ideal para quem quer montar uma loja virtual, revender no Instagram, ou crescer no TikTok vendendo sem estoque.
-    </p>
-    <p>
-      Tudo organizado, com contatos verificados, atualizações gratuitas e suporte para aplicar as estratégias.
-    </p>
-  </section>  <section class="produtos">
-    <img src="produtoss.jpg" alt="Imagem dos Produtos">
-  </section>  <section class="oferta">
+<body>
+  <header>
+    <!-- Mencionar imagem da logo -->
+    <img src="logoimports.png" alt="Logo Only Imports">
+  </header>  <section class="main-section">
+    <h1>Acesso aos Melhores Fornecedores da China e Brasil</h1>
+    <p>Descubra onde grandes lojistas compram com até <strong>70% de desconto</strong> e aumente sua margem de lucro.</p>
+    <a class="cta-button" href="https://pay.cakto.com.br/3cpbeyo_421390">Quero Garantir Meu Acesso</a>
+    <a class="nao-interesse" href="#">Não tenho interesse</a>
+  </section>  <div class="imagem-produtos">
+    <!-- Mencionar imagem dos produtos -->
+    <img src="produtoss.jpg" alt="+ de 800 mil variedades de Produtos">
+  </div>  <div class="descricao">
+    <p>Receba uma lista com os fornecedores mais confiáveis, com produtos variados, incluindo roupas, calçados, eletrônicos e mais. Tudo testado e aprovado, pronto para impulsionar seu negócio. Tenha acesso imediato, passo a passo de como pedir e apoio completo.</p>
+    <p>Não perca tempo buscando informações espalhadas — aqui está tudo em um só lugar, com a curadoria de especialistas no mercado de importação e revenda.</p>
+  </div>  <section class="oferta-especial">
     <h2>Oferta Especial</h2>
-    <p class="preco-antigo">De R$ 97,00</p>
-    <p class="preco-novo">Por apenas R$ 19,90</p>
-    <p class="desconto">Economize 80% hoje mesmo!</p>
-    <a class="btn-comprar" href="https://pay.cakto.com.br/3cpbeyo_421390">Quero Acessar Agora</a>
-    <a class="no-interest" href="#">Não tenho interesse</a>
+    <p class="preco">
+      <span class="preco-original">R$ 89,90</span>
+      <span class="preco-desconto">R$ 19,90</span>
+    </p>
+    <a class="cta-button" href="https://pay.cakto.com.br/3cpbeyo_421390">Quero Aproveitar com Desconto</a>
+    <a class="nao-interesse" href="#">Não tenho interesse</a>
   </section>  <footer>
-    © 2025 Only Imports. Todos os direitos reservados.
-  </footer></body>
+    © 2025 Only Imports - Todos os direitos reservados
+  </footer>
+</body>
 </html>
