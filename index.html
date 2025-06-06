@@ -11,14 +11,16 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-    }body {
-  background: url('fotodefundo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  backdrop-filter: blur(9px) brightness(0.3);
+    body {
+  background: url('fotodefundo.jpg') no-repeat center center;
+  background-attachment: scroll;
+  background-size: 110%; /* zoom leve */
+  background-position: center top;
   color: white;
   position: relative;
-  overflow-x: hidden;
-}
+  filter: brightness(0.4) blur(6px);
+  transition: background-position 0.2s ease-out;
+    }
 
 body::after {
   content: "";
@@ -215,5 +217,11 @@ h1 {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       showImage(currentIndex);
     }
+    <script>
+  window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    document.body.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
+  });
+</script>
   </script></body>
 </html>
