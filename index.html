@@ -79,8 +79,6 @@ h1 {
   margin-top: 2rem;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
 }
 
 .button-main:hover {
@@ -157,36 +155,12 @@ h1 {
   cursor: pointer;
 }
 
-.button-fixed-mobile {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #9f55d9, #6c22af);
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  z-index: 999;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(183, 132, 240, 0.5);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .button-fixed-mobile {
-    display: block;
-  }
-}
-
   </style>
 </head>
 <body>
   <div class="background"></div>  <div class="container" data-aos="fade-down">
     <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">
-    <h1><span class="highlight">Lista Secreta Revelada:</span> Os fornecedores que os gigantes do varejo escondem de você</h1>
+    <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo não querem que você conheça</h1>
     <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p><div class="carousel">
   <img src="produto11.png" class="active" alt="Produto 1">
   <img src="produto2.png" alt="Produto 2">
@@ -211,14 +185,13 @@ h1 {
   <span class="old-price">De R$ 89,90</span> <br>
   <strong>Por apenas <span class="highlight">R$ 19,90</span> (80% OFF)</strong>
 </div>
-<p style="font-size: 1rem; margin-top: 0.5rem;">Ou parcele em até <span class="highlight">6x de R$3,49</span> no cartão</p>
 
-<a href="https://pay.cakto.com.br/3cpbeyo_421390" class="button-main">Quero minha Lista Secreta Agora!</a>
-<div class="no-interest" onclick="document.body.scrollIntoView(false)">Não tenho interesse</div>
+<a href="https://pay.cakto.com.br/3cpbeyo_421390">
+  <button class="button-main">Quero minha Lista Secreta Agora!</button>
+</a>
+<div class="no-interest">Não tenho interesse</div>
 
-  </div><a href="https://pay.cakto.com.br/3cpbeyo_421390" class="button-fixed-mobile">Acessar por R$19,90</a>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+  </div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     AOS.init();
 
     let currentIndex = 0;
