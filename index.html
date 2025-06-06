@@ -22,8 +22,7 @@
       position: relative;
     }
 
-    body::before {
-      content: "";
+    .background {
       position: fixed;
       top: 0;
       left: 0;
@@ -31,9 +30,9 @@
       height: 110%;
       background: url('fotodefundo.jpg') no-repeat center center;
       background-size: cover;
-      filter: brightness(0.3) blur(8px);
-      transform: scale(1.2) translateY(0);
+      filter: brightness(0.3) blur(10px);
       z-index: -2;
+      transform: scale(1);
       will-change: transform;
     }
 
@@ -161,8 +160,10 @@
   </style>  
 </head>
 <body>  
+  <div class="background"></div>
+
   <div class="container" data-aos="fade-down">  
-    <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">  
+    <img src="logoimports.png" alt="Only Imports Logo" style="width: 450px; margin-bottom: 2rem;">  
     <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo não querem que você conheça</h1>  
     <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p>
 
@@ -221,20 +222,24 @@
       showImage(currentIndex);
     }
 
-    // Efeito parallax leve no fundo
-    window.addEventListener('scroll', () => {
-  const scroll = window.scrollY;
-  const bg = document.querySelector('body::before'); // won't work – use workaround:
-  const styleEl = document.createElement('style');
-  styleEl.innerHTML = `
-    body::before {
-      transform: scale(1.2) translateY(${scroll * 0.2}px) !important;
+    // Efeito suave de zoom com scroll
+    const bg = document.querySelector('.background');
+    let latestScrollY = 0;
+    let ticking = false;
+
+    function updateZoom() {
+      const scale = 1 + latestScrollY * 0.0005;
+      bg.style.transform = `scale(${scale})`;
+      ticking = false;
     }
-  `;
-  document.head.querySelector('#parallax-style')?.remove();
-  styleEl.id = 'parallax-style';
-  document.head.appendChild(styleEl);
-});
+
+    window.addEventListener('scroll', () => {
+      latestScrollY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(updateZoom);
+        ticking = true;
+      }
+    });
   </script>
 </body>
 </html>
