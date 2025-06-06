@@ -2,198 +2,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Only Imports - Acesso a Fornecedores Exclusivos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Only Imports - A Fonte dos Gigantes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      --roxo-elegante: #a259ff;
-      --branco: #fff;
-      --preto: #000;
-      --cinza-claro: #f2f2f2;
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--preto);
-  color: var(--branco);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }body {
+  background-color: #000;
+  color: white;
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
 
 header {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 30px 20px;
 }
 
-.logo {
-  max-width: 200px;
+header img {
+  max-width: 300px; /* AJUSTÁVEL */
   height: auto;
 }
 
-.hero {
+.container {
+  padding: 20px;
   text-align: center;
-  padding: 2rem;
-  animation: fadeIn 1.5s ease-in;
 }
 
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: var(--roxo-elegante);
-  animation: slideInDown 1s ease-out;
+h1, h2, h3 {
+  margin-bottom: 20px;
+  font-weight: 800;
 }
 
-.hero p {
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  font-size: 1rem;
-  color: var(--cinza-claro);
+.headline {
+  font-size: 2em;
+  color: #b57df0;
+}
+
+.subheadline {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
 .cta-btn {
-  background-color: var(--roxo-elegante);
-  color: var(--branco);
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
+  background-color: #b57df0;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2em;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  transition: background 0.3s ease;
+  margin: 20px auto;
   display: inline-block;
-  animation: pulse 2s infinite;
 }
 
 .cta-btn:hover {
-  transform: scale(1.05);
-  background-color: #7d3eff;
+  background-color: #9e60db;
 }
 
-.benefits, .how-it-works, .testimonials, .products, .offer, footer {
-  padding: 3rem 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
 }
 
-.benefits h2, .how-it-works h2, .testimonials h2, .products h2, .offer h2 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: var(--roxo-elegante);
-  margin-bottom: 1.5rem;
-}
-
-.benefits ul, .how-it-works ul {
-  list-style: none;
-  padding: 0;
-}
-
-.benefits li, .how-it-works li {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.product-img, .logo-img {
+.products img {
   width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 2rem auto;
+  border-radius: 8px;
+  background: #1a1a1a;
 }
 
-.offer {
-  text-align: center;
-  background-color: #111;
-  border-radius: 16px;
-  animation: fadeInUp 1.2s ease;
+.benefits {
+  text-align: left;
+  max-width: 800px;
+  margin: 40px auto;
 }
 
-.offer h3 {
-  font-size: 1.5rem;
-  margin: 1rem 0;
+.benefits li {
+  margin-bottom: 15px;
 }
 
-.price {
-  font-size: 2rem;
-  color: var(--roxo-elegante);
-  margin: 1rem 0;
+.price-section {
+  font-size: 1.5em;
+  margin-top: 40px;
 }
 
-.price del {
-  color: gray;
-  font-size: 1.2rem;
+.price-old {
+  text-decoration: line-through;
+  color: #888;
 }
 
-.no-thanks {
-  display: block;
-  margin-top: 1rem;
-  color: gray;
-  font-size: 0.9rem;
+.price-new {
+  font-size: 2.5em;
+  color: #b57df0;
+  font-weight: bold;
+}
+
+.no-interest {
+  margin-top: 15px;
+  color: #bbb;
+  font-size: 0.9em;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 footer {
+  padding: 40px 20px;
+  font-size: 0.9em;
+  color: #888;
   text-align: center;
-  font-size: 0.85rem;
-  color: gray;
-  padding-bottom: 2rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInDown {
-  from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); }
 }
 
   </style>
 </head>
 <body>
-  <header>
-    <!-- LOGO AJUSTÁVEL -->
-    <img src="logoimports.png" alt="Logo Only Imports" class="logo">
-  </header>  <section class="hero">
-    <h1>Descubra fornecedores exclusivos com até 70% de desconto</h1>
-    <p>Compre direto da fonte! Produtos do Brasil e da China com entrega garantida. Ganhe acesso vitalício agora mesmo!</p>
-    <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="cta-btn">Quero Garantir Meu Acesso</a>
-  </section>  <section class="benefits">
-    <h2>O que você vai receber</h2>
-    <ul>
-      <li>📦 Acesso a lista de fontes brasileiras e chineses</li>
-      <li>🔒 Garantia de procedência e qualidade</li>
-      <li>📲 Fornecedores com envio imediato</li>
-      <li>💸 Produtos com até 70% OFF</li>
-    </ul>
-    <!-- IMAGEM DOS PRODUTOS AJUSTÁVEL -->
-    <img src="produtoss.jpg" alt="Imagem dos Produtos" class="product-img">
-  </section>  <section class="how-it-works">
-    <h2>Como funciona?</h2>
-    <ul>
-      <li>1️⃣ Você compra o acesso</li>
-      <li>2️⃣ Recebe o link com a lista completa</li>
-      <li>3️⃣ Começa a vender com fornecedores confiáveis</li>
-    </ul>
-  </section>  <section class="offer">
-    <h2>🎯 Oferta Especial</h2>
-    <h3>De <del>R$97,00</del> por apenas:</h3>
-    <div class="price">R$19,90</div>
-    <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="cta-btn">Quero Aproveitar Agora!</a>
-    <a href="#" class="no-thanks">Não tenho interesse</a>
-  </section>  <footer>
+  <header data-aos="fade-down">
+    <!-- LOGO - Substituir src pelo link da imagem -->
+    <img src="logoimports.png" alt="Only Imports Logo">
+  </header>  <div class="container">
+    <h1 class="headline" data-aos="fade-up">CHEGA DE PAGAR CARO!</h1>
+    <p class="subheadline" data-aos="fade-up" data-aos-delay="100">
+      Lista Revelada: Os 6 maiores fabricantes que abastecem as grandes lojas agora estão ao seu alcance.
+    </p><button class="cta-btn" data-aos="zoom-in">QUERO ACESSAR AGORA</button>
+
+<h2 data-aos="fade-up">PRODUTOS</h2>
+<p data-aos="fade-up" data-aos-delay="100">CALÇADOS - ROUPAS - ACESSÓRIOS</p>
+
+<div class="products" data-aos="fade-up" data-aos-delay="200">
+  <!-- Substituir src pelos links reais das imagens dos produtos -->
+  <img src="produtoss.jpg" alt="Produto 1">
+</div>
+
+<div class="benefits" data-aos="fade-up">
+  <ul>
+    <li>✅ Peça direto da China de forma simples e segura</li>
+    <li>✅ Economize com preços de fábrica sem atravessadores</li>
+    <li>✅ Lucre até 300% revendendo os mesmos produtos</li>
+    <li>✅ A fonte dos gigantes do varejo, agora na sua mão</li>
+  </ul>
+</div>
+
+<div class="price-section" data-aos="fade-up">
+  <p class="price-old">De R$ 99,90</p>
+  <p class="price-new">Por apenas R$ 19,90</p>
+  <p><strong>80% DE DESCONTO</strong></p>
+</div>
+
+<button class="cta-btn" data-aos="zoom-in">GARANTIR MEU ACESSO AGORA</button>
+<p class="no-interest">Não tenho interesse</p>
+
+  </div>  <footer>
     © 2025 Only Imports. Todos os direitos reservados.
-  </footer>
-</body>
+  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script></body>
 </html>
