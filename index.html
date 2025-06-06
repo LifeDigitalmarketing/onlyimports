@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Only Imports</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -30,7 +30,7 @@
       height: 300%;
       background: url('fotodefundo.jpg') no-repeat center center;
       background-size: cover;
-      filter: brightness(0.3) blur(9px);
+      filter: brightness(0.3) blur(8px);
       z-index: -2;
       transform: scale(1);
       will-change: transform;
@@ -96,28 +96,25 @@
       margin: 3rem auto;
       overflow: hidden;
       border-radius: 12px;
+      min-height: 400px;
     }
 
     .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: auto;
-      display: none;
-      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      transform: scale(0.98);
     }
 
     .carousel img.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      position: relative;
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
     }
 
     .carousel-buttons {
@@ -157,13 +154,18 @@
       text-decoration: underline;
       cursor: pointer;
     }
+
+    .logo {
+      width: 250px;
+      margin-bottom: 1rem; /* reduzido de 2rem para 1rem */
+    }
   </style>
 </head>
 <body>
   <div class="background"></div>
 
   <div class="container" data-aos="fade-down">
-    <img src="logoimports.png" alt="Only Imports Logo" style="width: 450px; margin-bottom: 4rem;">
+    <img src="logoimports.png" alt="Only Imports Logo" class="logo">
     <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo não querem que você conheça</h1>
     <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p>
 
@@ -224,12 +226,13 @@
       showImage(currentIndex);
     }
 
+    // Efeito de zoom ao rolar
     const bg = document.querySelector('.background');
     let latestScrollY = 0;
     let ticking = false;
 
     function updateZoom() {
-      const scale = Math.min(1 + latestScrollY * 0.0002, 1.05);
+      const scale = 1 + latestScrollY * 0.0005;
       bg.style.transform = `scale(${scale})`;
       ticking = false;
     }
