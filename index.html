@@ -1,182 +1,201 @@
-<!DOCTYPE html><html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Only Imports - A Fonte dos Grandes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<!DOCTYPE html><html lang="pt-br"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Only Imports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      --roxo-principal: #b57df0;
-      --preto: #000;
-      --branco: #fff;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
     }body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: var(--branco);
-  background: url('fotodefundo.jpg') no-repeat center center fixed;
+  background: url('fotofundo.jpg') no-repeat center center fixed;
   background-size: cover;
-  backdrop-filter: brightness(0.9) contrast(1.1);
-  filter: contrast(1.2) saturate(1.2);
+  backdrop-filter: blur(5px) brightness(0.6);
+  color: white;
+  position: relative;
 }
 
-header, section, footer {
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
   text-align: center;
-  padding: 2rem;
 }
 
-.logo {
-  max-width: 300px;
-  height: auto;
-  margin: 1rem auto;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #b784f0;
+  text-shadow: 0 0 10px rgba(183, 132, 240, 0.6);
 }
 
-h1, h2, h3 {
-  font-family: 'Anton', sans-serif;
-  color: var(--roxo-principal);
-  text-shadow: 0 0 10px rgba(181, 125, 240, 0.7);
-}
-
-.cta-button, .skip-button {
-  display: inline-block;
-  margin: 1rem auto;
-  padding: 1rem 2rem;
-  font-size: 1.3rem;
+.highlight {
+  color: #b784f0;
   font-weight: bold;
+  text-shadow: 0 0 8px rgba(183, 132, 240, 0.7);
+}
+
+.button-main {
+  background: linear-gradient(90deg, #9f55d9, #6c22af);
   border: none;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
   cursor: pointer;
-  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta-button {
-  background: linear-gradient(90deg, #7e45e8, #b57df0);
-  color: var(--branco);
-  box-shadow: 0 0 15px #b57df0;
-}
-
-.cta-button:hover {
+.button-main:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #b57df0;
-}
-
-.skip-button {
-  background: transparent;
-  color: #aaa;
-  text-decoration: underline;
+  box-shadow: 0 0 15px #b784f0;
 }
 
 .carousel {
   position: relative;
-  max-width: 350px;
-  margin: 2rem auto;
-  border: 2px solid var(--roxo-principal);
-  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 3rem auto;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(181, 125, 240, 0.3);
+  border-radius: 12px;
 }
 
 .carousel img {
   width: 100%;
   height: auto;
   display: none;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .carousel img.active {
   display: block;
-  opacity: 1;
-  transform: scale(1.05);
 }
 
-.carousel-controls {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.carousel-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 1rem;
 }
 
-.carousel-controls button {
-  margin: 0 10px;
-  padding: 0.5rem 1rem;
-  background-color: var(--roxo-principal);
-  color: var(--branco);
+.carousel-buttons button {
+  background-color: #6c22af;
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+  background-color: #b784f0;
+}
+
+.price {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 1.2rem;
+}
+
+.no-interest {
+  margin-top: 1rem;
+  color: #aaa;
+  text-decoration: underline;
   cursor: pointer;
 }
 
-.vintage-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: url('https://www.transparenttextures.com/patterns/noise.png');
-  opacity: 0.15;
-  z-index: 9999;
-}
-
   </style>
-</head>
-<body>
-  <div class="vintage-overlay"></div>
-  <header>
-    <img src="logoimports.png" alt="Logo Only Imports" class="logo" />
-    <h1 data-aos="zoom-in">CHEGA DE PAGAR CARO!</h1>
-    <p data-aos="fade-up">Descubra os fornecedores secretos das lojas mais famosas. E agora, o acesso é seu.</p>
-  </header>  <section data-aos="fade-up">
-    <h2>Produtos Exclusivos</h2>
-    <div class="carousel">
-      <img src="produto1.png" class="active" alt="Produto 1" />
-      <img src="produto2.png" alt="Produto 2" />
-      <img src="produto3.png" alt="Produto 3" />
-      <img src="produto4.png" alt="Produto 4" />
-      <img src="produto5.png" alt="Produto 5" />
-      <img src="produto6.png" alt="Produto 6" />
-      <img src="produto7.png" alt="Produto 7" />
-      <img src="produto8.png" alt="Produto 8" />
-      <img src="produto9.png" alt="Produto 9" />
-      <img src="produto10.png" alt="Produto 10" />
-      <img src="produto11.png" alt="Produto 11" />
-      <img src="produto12.png" alt="Produto produto12" />
-    </div>
-    <div class="carousel-controls">
-      <button onclick="previousImage()">◀</button>
-      <button onclick="nextImage()">▶</button>
-    </div>
-  </section>  <section data-aos="fade-up">
-    <h2>🔥 Oportunidade Limitada</h2>
-    <p>Tenha acesso à lista dos 6 maiores fornecedores chineses e brasileiros usados pelas grandes lojas.</p>
-    <h3>DE <s>R$ 99,90</s> POR APENAS <span style="color: var(--roxo-principal); text-shadow: 0 0 10px #b57df0;">R$ 19,90</span></h3>
-    <p><strong>80% DE DESCONTO</strong> só hoje!</p>
-    <button class="cta-button">QUERO TER ACESSO AGORA 🔥</button>
-    <div><button class="skip-button">Não tenho interesse</button></div>
-  </section>  <footer data-aos="fade-up">
-    <p>© 2025 Only Imports. Todos os direitos reservados.</p>
-  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+</head><body>
+  <div class="container" data-aos="fade-down">
+    <img src="logoimports.png" alt="Only Imports Logo" style="width: 250px; margin-bottom: 2rem;">
+    <h1>Descubra a <span class="highlight">Lista Secreta</span> que os gigantes do varejo não querem que você conheça</h1>
+    <p style="margin-top: 1rem; font-size: 1.1rem;">Chegou sua chance de acessar os <span class="highlight">6 maiores fornecedores</span> do mercado – diretos da fonte. Você não precisa mais pagar caro!</p><div class="carousel">
+  <img src="produto1.jpg" class="active" alt="Produto 1">
+  <img src="produto2.jg" alt="Produto 2">
+  <img src="produto3.jpg" alt="Produto 3">
+  <img src="produtos4.jpg" alt="Produto 4">
+  <img src="produto5.png" alt="Produto 5">
+  <img src="produto6.png" alt="Produto 6">
+  <img src="produto7.png" alt="Produto 7">
+  <img src="produto8.png" alt="Produto 8">
+  <img src="produto9.png" alt="Produto 9">
+  <img src="produto10.png" alt="Produto 10">
+  <img src="produto11.png" alt="Produto 11">
+  <img src="produto12.png" alt="Produto produto12">
+</div>
+
+<div class="carousel-buttons">
+  <button onclick="prevImage()">Anterior</button>
+  <button onclick="nextImage()">Próximo</button>
+</div>
+
+<div class="price">
+  <span class="old-price">De R$ 89,90</span> <br>
+  <strong>Por apenas <span class="highlight">R$ 19,90</span> (80% OFF)</strong>
+</div>
+
+<button class="button-main">Quero minha Lista Secreta Agora!</button>
+<div class="no-interest">Não tenho interesse</div>
+
+  </div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     AOS.init();
 
+    let currentIndex = 0;
     const images = document.querySelectorAll('.carousel img');
-    let current = 0;
 
     function showImage(index) {
       images.forEach((img, i) => {
         img.classList.remove('active');
-        if (i === index) img.classList.add('active');
+        if (i === index) {
+          img.classList.add('active');
+        }
       });
     }
 
     function nextImage() {
-      current = (current + 1) % images.length;
-      showImage(current);
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
     }
 
-    function previousImage() {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
     }
-  </script></body>
-</html>
+  </script></body></html>
